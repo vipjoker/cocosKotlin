@@ -1,13 +1,13 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
 android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.vipjokerstudio.cocoskotlin"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -28,6 +28,23 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.vipjokerstudio'
+            artifactId = 'cocoskotlin'
+            version = "0.1-SNAPSHOT"
+
+
+            pom {
+                description = 'A description of my library'
+
+            }
+        }
     }
 }
 
