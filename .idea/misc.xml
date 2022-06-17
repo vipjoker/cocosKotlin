@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/sample_game_texture_view.xml" value="0.17083333333333334" />
       </map>
     </option>
