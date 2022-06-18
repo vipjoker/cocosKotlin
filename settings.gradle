@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CocosKotlin"
 include ':app'
-include ':mylibrary'
