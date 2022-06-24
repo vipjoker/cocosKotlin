@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'maven-publish'
+//    id 'maven-publish'
 }
 
 android {
@@ -23,12 +23,12 @@ android {
         }
     }
 
-    publishing {
-        singleVariant('release') {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
+//    publishing {
+//        singleVariant('release') {
+//            withSourcesJar()
+//            withJavadocJar()
+//        }
+//    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -39,22 +39,22 @@ android {
     }
 }
 
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.vipjokerstudio'
-            artifactId = 'cocoskotlin'
-            version = "0.1-SNAPSHOT"
-
-
-            pom {
-                description = 'A description of my library'
-
-            }
-        }
-    }
-}
+//
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            groupId = 'com.vipjokerstudio'
+//            artifactId = 'cocoskotlin'
+//            version = "0.1-SNAPSHOT"
+//
+//
+//            pom {
+//                description = 'A description of my library'
+//
+//            }
+//        }
+//    }
+//}
 
 dependencies {
 
