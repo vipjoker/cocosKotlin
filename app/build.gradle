@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.vipjoker'
-version = '0.5'
+version = '0.6'
 
 android {
     compileSdk 31
@@ -14,7 +14,7 @@ android {
         minSdk 21
         targetSdk 31
         versionCode 1
-        versionName "1.0"
+        versionName "0.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -76,8 +76,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.vipjoker'
-                artifactId = 'CocosKotlin'
-                version = '0.5'
+                artifactId = 'cocosKotlin'
+                version = '0.6'
             }
         }
     }
