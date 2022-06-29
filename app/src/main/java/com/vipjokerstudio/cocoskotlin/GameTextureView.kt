@@ -12,7 +12,7 @@ import android.view.View
 /**
  * TODO: document your custom view class.
  */
-class GameTextureView : View {
+public class GameTextureView : View {
 
     private var _exampleString: String? = null // TODO: use a default from R.string...
     private var _exampleColor: Int = Color.RED // TODO: use a default from R.color...

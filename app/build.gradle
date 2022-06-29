@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.vipjoker'
-version = '0.6'
+version = '0.7'
 
 android {
     compileSdk 31
@@ -14,7 +14,7 @@ android {
         minSdk 21
         targetSdk 31
         versionCode 1
-        versionName "0.6"
+        versionName "0.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -42,24 +42,9 @@ android {
     }
 }
 
-//
-//publishing {
-//    publications {
-//        maven(MavenPublication) {
-//            groupId = 'com.vipjokerstudio'
-//            artifactId = 'cocoskotlin'
-//            version = "0.1-SNAPSHOT"
-//
-//
-//            pom {
-//                description = 'A description of my library'
-//
-//            }
-//        }
-//    }
-//}
 
 dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -77,7 +62,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.vipjoker'
                 artifactId = 'cocosKotlin'
-                version = '0.6'
+                version = '0.7'
             }
         }
     }
