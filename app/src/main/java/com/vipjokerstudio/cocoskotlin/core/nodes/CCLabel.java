@@ -57,15 +57,15 @@ public class CCLabel extends CCNode {
         _fontName = name;
         _fontSize = size;
 
-        paint.setColor(Color.WHITE);
-        paint.setTextAlign(parseTextAlign(alignment));
-        paint.setTextSize(size);
-        paint.setTypeface(typeface);
+        getPaint().setColor(Color.WHITE);
+        getPaint().setTextAlign(parseTextAlign(alignment));
+        getPaint().setTextSize(size);
+        getPaint().setTypeface(typeface);
         setString(string);
     }
 
     public void setTextColor(int color){
-        paint.setColor(color);
+        getPaint().setColor(color);
     }
 
     private Paint.Align parseTextAlign(TextAlignment alignment){
@@ -86,7 +86,7 @@ public class CCLabel extends CCNode {
     @Override
     public void draw(CanvasWrapper canvas) {
         super.draw(canvas);
-        canvas.drawText(text, getPositionRef().x, getPositionRef().y,paint);
+        canvas.drawText(text, getPositionRef().x, getPositionRef().y,getPaint());
 
     }
 

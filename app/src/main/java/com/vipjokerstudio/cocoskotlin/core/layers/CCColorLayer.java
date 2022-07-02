@@ -55,20 +55,20 @@ public class CCColorLayer extends CCLayer implements CCNode.CocosNodeSize {
     protected void init(Color4B color, float w, float h) {
         this.color = new Color3B(color.r, color.g, color.b);
         opacity = color.a;
-        paint.setStyle(Paint.Style.FILL);
+        getPaint().setStyle(Paint.Style.FILL);
         updateColor();
         setContentSize(w, h);
     }
 
     private void updateColor() {
-        paint.setColor(Color.rgb(color.r, color.g, color.b));
-        paint.setAlpha(opacity);
+        getPaint().setColor(Color.rgb(color.r, color.g, color.b));
+        getPaint().setAlpha(opacity);
     }
 
     @Override
     public void draw(CanvasWrapper canvas) {
 
-        canvas.drawRect(0,0, getContentSize().width, getContentSize().height, paint);
+        canvas.drawRect(0,0, getContentSize().width, getContentSize().height, getPaint());
         super.draw(canvas);
     }
 

@@ -1,5 +1,6 @@
 package com.vipjokerstudio.cocoskotlin.render;
 
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -48,6 +49,7 @@ public class GameTextureView extends TextureView
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
         Choreographer.getInstance().postFrameCallback(this);
+        isRunning = true;
         if(renderer!= null){
             renderer.init(width,height);
         }
@@ -61,7 +63,8 @@ public class GameTextureView extends TextureView
 
     @Override
     public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-
+         isRunning = false;
+        Choreographer.getInstance().removeFrameCallback(this);
 //        boolean retry = true;
 //
 //        drawingThread.setRunning(false);
@@ -130,6 +133,9 @@ public class GameTextureView extends TextureView
 //
 //    }
 
+
+
+
     @Override
     public void doFrame(long frameTimeNanos) {
 
@@ -150,7 +156,9 @@ public class GameTextureView extends TextureView
 //        processInput();
 
         previousTime = System.currentTimeMillis();
-        Choreographer.getInstance().postFrameCallback(this);
+        if(isRunning){
+            Choreographer.getInstance().postFrameCallback(this);
+        }
 
 
     }

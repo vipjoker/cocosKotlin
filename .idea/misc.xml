@@ -4,7 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.171875" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/layout/sample_game_texture_view.xml" value="0.17083333333333334" />
+        <entry key="testgame/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="testgame/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="testgame/src/main/res/layout/activity_main.xml" value="0.24166666666666667" />
+        <entry key="testgame/src/main/res/layout/content_main.xml" value="0.24166666666666667" />
+        <entry key="testgame/src/main/res/layout/fragment_first.xml" value="0.24166666666666667" />
+        <entry key="testgame/src/main/res/layout/fragment_second.xml" value="0.24166666666666667" />
       </map>
     </option>
   </component>

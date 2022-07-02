@@ -238,7 +238,7 @@ public class CCSpriteFrameCache {
       */
     public CCSprite createSprite(String name) {
         CCSpriteFrame frame = spriteFrames.get(name);
-        return CCSprite.sprite(frame);
+        return CCSprite.Companion.sprite(frame);
     }
 }
 

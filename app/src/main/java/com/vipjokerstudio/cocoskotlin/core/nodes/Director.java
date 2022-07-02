@@ -279,7 +279,7 @@ public class Director implements Renderer {
 
     @Override
     public void draw(Canvas canvas, long time) {
-
+        Log.i("DEBUG", "draw: " + time);
         CCTouchDispatcher.sharedDispatcher().update();
         CCKeyDispatcher.sharedDispatcher().update();
         drawCCScene(canvas);

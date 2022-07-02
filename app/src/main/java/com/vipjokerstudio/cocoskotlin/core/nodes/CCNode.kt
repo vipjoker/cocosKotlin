@@ -22,36 +22,25 @@ import java.util.*
 
 open class CCNode: TouchReciever {
     open var opacity = 255
-    @JvmField
     protected var bounds = CGRect()
     var scaleX = 1.0f
     var scaleY = 1.0f
-
-    /**
-     * The z order of the node relative to it's "brothers": children of the same parent
-     */
     var zOrder: Int
-        private set
     open var color: Color3B? = null
     open var rotation = 0.0f
     var anchorPointRef: Vec2
-        protected set
+
     public var positionRef: Vec2
-        protected set
+
     protected var anchorPointInPixels_: Vec2
 
-    /**
-     * A custom user data pointer
-     */
+
     var userData: Any?
     protected val contentSize: Size
 
 
-    /**
-     * whether or not the node is running
-     */
+
     var isRunning = false
-        private set
     private var isRelativeAnchorPoint_: Boolean
     private val transform_: CGAffineTransform
     private val inverse_: CGAffineTransform
@@ -60,11 +49,7 @@ open class CCNode: TouchReciever {
     private var isTransformDirty_: Boolean
     private var isInverseDirty_: Boolean
 
-    /**
-     * A weak reference to the parent
-     */
     var parent: CCNode? = null
-    @JvmField
     protected var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     protected var debugPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
@@ -146,22 +131,14 @@ open class CCNode: TouchReciever {
         isTransformDirty_ = isInverseDirty_
     }
 
-    /**
-     * A CCCamera object that lets you move the node using a gluLookAt
-     */
     private var camera_: CCCamera?
 
-    // camera: lazy alloc
     val camera: CCCamera
         get() {
             if (camera_ == null) camera_ = CCCamera()
             return camera_!!
         }
 
-    /**
-     * Whether of not the node is visible. Default is YES
-     */
-    // is visible
     open var visible: Boolean = true
 
     /**
@@ -173,14 +150,13 @@ open class CCNode: TouchReciever {
     // openGL real Z vertex
     protected var vertexZ_ = 0f
 
-    // used internally to alter the zOrder variable. DON'T call this method manually
     private fun _setZOrder(z: Int) {
         zOrder = z
     }
 
     // array of children
     @JvmField
-    protected var children = Collections.synchronizedList(ArrayList<CCNode?>())
+    protected var children = Collections.synchronizedList(ArrayList<CCNode>())
 
 
     open fun addChild(child: CCNode?, z: Int, tag: String): CCNode {
@@ -258,10 +234,7 @@ open class CCNode: TouchReciever {
         children.remove(child)
     }
 
-    /**
-     * Reorders a child according to a new z value.
-     * The child MUST be already added.
-     */
+
     open fun reorderChild(child: CCNode?, zOrder: Int) {
         assert(child != null) { "Child must be non-null" }
         children.remove(child)

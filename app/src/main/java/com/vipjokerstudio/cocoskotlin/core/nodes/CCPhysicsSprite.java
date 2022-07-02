@@ -40,7 +40,7 @@ public class CCPhysicsSprite extends CCSprite {
     }
 
     private void initPaint() {
-        paint.setColor(Color.argb(100, 168, 17, 30));
+        getPaint().setColor(Color.argb(100, 168, 17, 30));
         strokePaint.setStyle(Paint.Style.STROKE);
         strokePaint.setColor(Color.argb(255, 168, 17, 30));
         textPaint.setStyle(Paint.Style.FILL);
@@ -276,7 +276,7 @@ public class CCPhysicsSprite extends CCSprite {
                     p.close();
                     canvas.save();
 //                    canvas.rotate((float) Math.toDegrees(body.getAngle()), 0, 0);
-                    canvas.drawPath(p, paint);
+                    canvas.drawPath(p, getPaint());
                     canvas.drawPath(p, strokePaint);
                     canvas.restore();
                     break;
@@ -286,12 +286,12 @@ public class CCPhysicsSprite extends CCSprite {
                     Vec2 center = body.getPosition().mul(32);
 
 
-                    canvas.drawCircle(bounds.midX(),-bounds.midY(), radius, paint);
-                    canvas.drawCircle(bounds.midX(),-bounds.midY(), radius, strokePaint);
+                    canvas.drawCircle(getBounds().midX(),-getBounds().midY(), radius, getPaint());
+                    canvas.drawCircle(getBounds().midX(),-getBounds().midY(), radius, strokePaint);
 
                     canvas.save();
-                    canvas.rotate((float)Math.toDegrees(body.getAngle()),bounds.midX(),-bounds.midY());
-                    canvas.drawLine(bounds.midX(),-bounds.midY(),bounds.midX() + radius,-bounds.midY(),strokePaint);
+                    canvas.rotate((float)Math.toDegrees(body.getAngle()),getBounds().midX(),-getBounds().midY());
+                    canvas.drawLine(getBounds().midX(),-getBounds().midY(),getBounds().midX() + radius,-getBounds().midY(),strokePaint);
 
                     canvas.restore();
                     break;
